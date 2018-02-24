@@ -30,7 +30,7 @@ import {
   ROUTE_TRIGGERS,
   ROUTE_VARIABLES,
   ROUTE_WORKFLOWS,
-} from './config/routeNames'
+} from './config/routes'
 
 class Routes extends React.Component {
   constructor(props, context) {

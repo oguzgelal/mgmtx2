@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Page from '../components/Page/Page'
+
 class Variables extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -13,7 +15,9 @@ class Variables extends React.Component {
 
   render() {
     return (
-      <div className=""></div>
+      <Page {...this.props}>
+        Variables View
+      </Page>
     );
   }
 }

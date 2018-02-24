@@ -1,3 +1,4 @@
+// route names
 export const ROUTE_DASHBOARDS = 'dashboards'
 export const ROUTE_DATA = 'data'
 export const ROUTE_ENTITIES = `${ROUTE_DATA}/entities`
@@ -10,3 +11,6 @@ export const ROUTE_ACTIONS = `${ROUTE_AUTOMATE}/actions`
 export const ROUTE_WORKFLOWS = `${ROUTE_AUTOMATE}/workflows`
 export const ROUTE_TRIGGERS = `${ROUTE_AUTOMATE}/triggers`
 export const ROUTE_ENDPOINTS = `${ROUTE_AUTOMATE}/endpoints`
+
+// settings
+export const DEFAULT_ROUTE = ROUTE_DASHBOARDS;

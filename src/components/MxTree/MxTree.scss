@@ -1,0 +1,16 @@
+@import "~@blueprintjs/core/lib/scss/variables";
+
+.mx-tree {
+  padding: 20px 10px;
+  padding-right: 15px;
+
+  &--container {
+    width: 300px;
+
+    .pt-dark & {
+      background-color: $pt-dark-code-background-color;
+    }
+  }
+
+
+}

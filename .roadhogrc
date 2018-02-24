@@ -5,6 +5,8 @@
       "> 5%"
     ]
   },
+  "disableCSSModules": true,
+  "sass": {},
   "env": {
     "development": {
       "extraBabelPlugins": [

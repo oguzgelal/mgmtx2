@@ -1,0 +1,19 @@
+@import "~@blueprintjs/core/lib/scss/variables";
+
+.mx-page {
+  display: flex;
+  position: relative;
+  min-width: 100vw;
+  overflow: hidden !important;
+
+  height: calc(100vh - #{$pt-navbar-height});
+  &--no-navbar { height: 100vh !important; }
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  background-color: $pt-app-background-color;
+  .pt-dark & { background-color: $pt-dark-app-background-color; }
+}

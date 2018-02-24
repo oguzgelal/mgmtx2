@@ -30,7 +30,7 @@ import {
   ROUTE_DATA,
   ROUTE_VALUES,
   ROUTE_AUTOMATE,
-} from '../../config/routeNames'
+} from '../../config/routes'
 
 class MxNavbar extends React.Component {
   constructor(props, context) {
@@ -110,14 +110,8 @@ class MxNavbar extends React.Component {
       </Menu>
     );
 
-    // dark theme
-    let navbarClassName = '';
-    if (this.props.theme.active.id === 'dark') {
-      navbarClassName = 'pt-dark';
-    }
-
     return (
-      <Navbar className={cx(navbarClassName)}>
+      <Navbar>
         <Navbar.Group align={Alignment.LEFT}>
           <Navbar.Heading>MgmtX</Navbar.Heading>
           <Navbar.Divider />
@@ -199,12 +193,10 @@ class MxNavbar extends React.Component {
 }
 
 MxNavbar.propTypes = {
-  theme: PropTypes.object,
   themeActions: PropTypes.object,
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  routing: state.routing,
   theme: state.theme
 });
 

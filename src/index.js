@@ -16,7 +16,7 @@ import theme from './models/theme'
 // styles
 import 'normalize.css/normalize.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
-import './index.css';
+import './index.scss';
 
 // Initialize
 const app = dva({

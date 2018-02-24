@@ -1,0 +1,12 @@
+.mx-scroller {
+  visibility: visible;
+
+  &--hidden {
+    .ps__rail-x {
+      visibility: hidden !important;
+    }
+    .ps__rail-y {
+      visibility: hidden !important;
+    }
+  }
+}

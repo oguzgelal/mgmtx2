@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'dva/router';
 
 // Components
-import Base from '../../Base/Base';
+import Base from '../../../containers/Base/Base';
 import { isLoggedIn } from '../../../utils/mics';
 
 const PublicRoute = ({ component: Component, user, userRedirectPath, ...rest }) => (

@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Page from '../components/Page/Page'
+import MxTree from '../components/MxTree/MxTree'
+
+
 class Dashboards extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -13,9 +17,9 @@ class Dashboards extends React.Component {
 
   render() {
     return (
-      <div className="">
-
-      </div>
+      <Page {...this.props}>
+        <MxTree />
+      </Page>
     );
   }
 }
