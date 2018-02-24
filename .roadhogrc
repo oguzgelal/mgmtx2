@@ -1,0 +1,21 @@
+{
+  "entry": "src/index.js",
+  "autoprefixer": {
+    "browsers": [
+      "> 5%"
+    ]
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
+      ]
+    }
+  }
+}
