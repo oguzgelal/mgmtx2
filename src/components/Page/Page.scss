@@ -1,5 +1,9 @@
 @import "~@blueprintjs/core/lib/scss/variables";
 
+$sidebar-width: 270px;
+$sidebar-bg-light: rgba(255,255,255,0.7);
+$sidebar-bg-dark: $pt-dark-code-background-color;
+
 .mx-page {
   display: flex;
   position: relative;
@@ -9,11 +13,32 @@
   height: calc(100vh - #{$pt-navbar-height});
   &--no-navbar { height: 100vh !important; }
 
+  background-color: $pt-app-background-color;
+  .pt-dark & { background-color: $pt-dark-app-background-color; }
+
   &--center {
+    display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  background-color: $pt-app-background-color;
-  .pt-dark & { background-color: $pt-dark-app-background-color; }
+  &--sidebar {
+    flex-shrink: 0;
+    width: $sidebar-width;
+    background-color: $sidebar-bg-light;
+    border-right: 1px solid rgba(0,0,0,.05);
+
+    .pt-dark & {
+      background-color: $sidebar-bg-dark;
+      border: none;
+    }
+  }
+
+  &--contents {
+    flex-grow: 1;
+    &-center {
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

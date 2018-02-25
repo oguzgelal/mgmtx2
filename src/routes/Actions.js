@@ -14,11 +14,9 @@ class Actions extends React.Component {
   }
 
   render() {
-    return (
-      <Page {...this.props}>
-        Actions View
-      </Page>
-    );
+    const sidebar = (<div></div>);
+    const contents = (<div></div>);
+    return <Page {...this.props} sidebar={sidebar} contents={contents} />;
   }
 }
 

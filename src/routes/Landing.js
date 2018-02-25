@@ -23,11 +23,8 @@ class Landing extends React.Component {
   }
 
   render() {
-    return (
-      <Page center {...this.props}>
-        <LoginForm onSubmit={this.onSubmit} />
-      </Page>
-    );
+    const contents = <LoginForm onSubmit={this.onSubmit} />;
+    return <Page {...this.props} center contents={contents} />;
   }
 }
 

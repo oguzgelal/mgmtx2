@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Page from '../components/Page/Page'
+import MxTree from '../components/MxTree/MxTree'
+import mockTags from '../config/mockTags'
 
 class Entities extends React.Component {
   constructor(props, context) {
@@ -14,11 +16,16 @@ class Entities extends React.Component {
   }
 
   render() {
+    const sidebar = <MxTree multiSelect nodes={mockTags} />;
+    const contents = (<div></div>);
     return (
-      <Page {...this.props}>
-        Entities View
-      </Page>
-    );
+      <Page
+        {...this.props}
+        sidebar={sidebar}
+        sidebarSize={250}
+        contents={contents}
+      />
+    )
   }
 }
 

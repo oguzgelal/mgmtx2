@@ -4,15 +4,16 @@
   padding: 10px 0;
 
   &--container {
-    width: 270px;
-    background-color: rgba(255,255,255,0.7);
-    border-right: 1px solid rgba(0,0,0,.05);
-
-    .pt-dark & {
-      background-color: $pt-dark-code-background-color;
-      border: none;
+    width: 100%;
+  }
+  &--label-node {
+    margin-top: 20px;
+    margin-left: -15px;
+    &:first-child { margin-top: 5px; }
+  }
+  &--label-node > .pt-tree-node-content {
+    &:hover {
+      background-color: inherit !important;
     }
   }
-
-
 }

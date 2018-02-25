@@ -93,6 +93,6 @@ export default [
   {
     id: 15,
     icon: "control",
-    label: "Papers",
+    label: "Paper Tracker",
   },
 ];

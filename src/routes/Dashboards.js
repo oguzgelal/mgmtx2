@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import Page from '../components/Page/Page'
 import MxTree from '../components/MxTree/MxTree'
+import mockDashboards from '../config/mockDashboards'
 
 
 class Dashboards extends React.Component {
@@ -16,10 +17,22 @@ class Dashboards extends React.Component {
   }
 
   render() {
+
+    const sidebar = (
+      <MxTree nodes={mockDashboards} />
+    );
+
+    const contents = (
+      <div className="">Page contents</div>
+    );
+
     return (
-      <Page {...this.props}>
-        <MxTree />
-      </Page>
+      <Page
+        {...this.props}
+        sidebar={sidebar}
+        sidebarSize={300}
+        contents={contents}
+      />
     );
   }
 }

@@ -150,7 +150,7 @@ class MxNavbar extends React.Component {
 
           <Popover content={AutomateMenu}>
             <Button
-              icon="console"
+              icon="cog"
               text="Automate"
               className={cx(
                 'pt-minimal',

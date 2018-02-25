@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+import Scroller from '../Scroller/Scroller'
 import { isLoggedIn } from '../../utils/mics'
 
 import './Page.scss';
@@ -15,9 +16,37 @@ const Page = props => {
       'pt-app',
       'mx-page',
       { 'mx-page--no-navbar': !navbarExists },
-      { 'mx-page--center': props.center }
     )}>
-      {props.children}
+
+      {
+        props.sidebar &&
+        <div
+          style={{ width: props.sidebarSize }}
+          className={cx(
+            'mx-page--sidebar'
+          )}
+        >
+          <Scroller hidden>
+            {props.sidebar}
+          </Scroller>
+        </div>
+      }
+
+      {
+        props.contents &&
+        <div
+          className={cx(
+            'mx-page--contents',
+            { 'mx-page--contents-center': props.center }
+          )}
+        >
+          <Scroller class={cx({ 'mx-page--center': props.center })}>
+            {props.contents}
+          </Scroller>
+        </div>
+      }
+
+
     </div>
   );
 };
@@ -26,7 +55,13 @@ Page.propTypes = {
   data: PropTypes.object,
   user: PropTypes.object,
   center: PropTypes.bool,
-  children: PropTypes.oneOfType([
+  sidebarSize: PropTypes.number,
+  sidebar: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
+  contents: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
     PropTypes.array,
