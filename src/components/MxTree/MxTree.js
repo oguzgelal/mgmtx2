@@ -59,6 +59,13 @@ class MxTree extends React.Component {
   render() {
     return (
       <div className="mx-tree--container">
+        {
+          this.props.renderTop &&
+          <div className="mx-tree--top">
+            {this.props.renderTop}
+          </div>
+        }
+
         <Tree
           className="mx-tree"
           contents={this.state.nodes}
@@ -74,6 +81,7 @@ class MxTree extends React.Component {
 MxTree.propTypes = {
   nodes: PropTypes.array.isRequired,
   multiSelect: PropTypes.bool,
+  renderTop: PropTypes.object,
 };
 
 export default MxTree;

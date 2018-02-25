@@ -1,19 +1,36 @@
 @import "~@blueprintjs/core/lib/scss/variables";
 
 .mx-tree {
-  padding: 10px 0;
+
+  &--top {
+    padding: 10px;
+    padding-bottom: 0;
+  }
 
   &--container {
     width: 100%;
   }
   &--label-node {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: -15px;
     &:first-child { margin-top: 5px; }
   }
   &--label-node > .pt-tree-node-content {
     &:hover {
+      cursor: default !important;
       background-color: inherit !important;
     }
+  }
+}
+
+.pt-tree-node-caret {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pt-tree-node-content {
+  &:hover {
+    cursor: pointer;
   }
 }

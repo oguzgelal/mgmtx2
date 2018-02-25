@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import history from '../../config/history'
 import themeModel from '../../models/theme'
+import './MxNavbar.scss';
 
 import {
   Button,
@@ -14,7 +15,9 @@ import {
   InputGroup,
   Menu,
   MenuItem,
-  Popover
+  Popover,
+  Position,
+  Classes,
 } from '@blueprintjs/core';
 
 import {
@@ -110,6 +113,31 @@ class MxNavbar extends React.Component {
       </Menu>
     );
 
+    const SearchMenu = (
+      <Popover
+        position={Position.BOTTOM_RIGHT}
+        content={
+          <Menu>
+            <MenuItem text="All" />
+            <MenuItem text="Entities" />
+            <MenuItem text="Collections" />
+            <MenuItem text="Variables" />
+            <MenuItem text="Constants" />
+            <MenuItem text="Actions" />
+            <MenuItem text="Workflows" />
+            <MenuItem text="Triggers" />
+            <MenuItem text="Endpoints" />
+          </Menu>
+        }
+      >
+        <Button
+          className={Classes.MINIMAL}
+          rightIcon="caret-down"
+          text="All"
+        />
+      </Popover>
+    );
+
     return (
       <Navbar>
         <Navbar.Group align={Alignment.LEFT}>
@@ -166,6 +194,8 @@ class MxNavbar extends React.Component {
           <InputGroup
             leftIcon="search"
             placeholder="Search"
+            rightElement={SearchMenu}
+            className="mx-navbar--search-group"
           />
 
           <Navbar.Divider />

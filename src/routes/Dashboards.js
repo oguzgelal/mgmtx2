@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import { Button, ControlGroup, InputGroup } from '@blueprintjs/core'
+
 import Page from '../components/Page/Page'
 import MxTree from '../components/MxTree/MxTree'
 import mockDashboards from '../config/mockDashboards'
@@ -19,11 +21,13 @@ class Dashboards extends React.Component {
   render() {
 
     const sidebar = (
-      <MxTree nodes={mockDashboards} />
+      <div>
+        <MxTree nodes={mockDashboards} />
+      </div>
     );
 
     const contents = (
-      <div className="">Page contents</div>
+      <div />
     );
 
     return (
