@@ -3,51 +3,96 @@ import { Tooltip, Icon } from '@blueprintjs/core'
 export default [
   {
     id: 0,
-    hasCaret: true,
-    icon: "folder-close",
-    label: "Folder 0",
+    icon: "control",
+    label: "Calorie Tracker",
   },
   {
     id: 1,
     icon: "folder-close",
     isExpanded: true,
-    label: <Tooltip content="I'm a folder <3">Folder 1</Tooltip>,
+    label: "Projects",
     childNodes: [
       {
-        id: 2,
-        icon: "document",
-        label: "Item 0",
-        secondaryLabel: (
-          <Tooltip content="An eye!">
-            <Icon icon="eye-open" />
-          </Tooltip>
-        ),
-      },
-      {
-        id: 3,
-        icon: "tag",
-        label: "Organic meditation gluten-free, sriracha VHS drinking vinegar beard man.",
-      },
-      {
         id: 4,
-        hasCaret: true,
+        icon: "control",
+        label: "Clouds Against Humanity",
+      },
+      {
+        id: 5,
+        icon: "control",
+        label: "Track.ist",
+      },
+      {
+        id: 6,
+        isExpanded: true,
         icon: "folder-close",
-        label: <Tooltip content="foo">Folder 2</Tooltip>,
+        label: "School",
         childNodes: [
-          { id: 5, label: "No-Icon Item" },
-          { id: 6, icon: "tag", label: "Item 1" },
           {
             id: 7,
-            hasCaret: true,
-            icon: "folder-close",
-            label: "Folder 3",
-            childNodes: [
-              { id: 8, icon: "document", label: "Item 0" },
-              { id: 9, icon: "tag", label: "Item 1" },
-            ],
+            icon: "control",
+            label: "School Works",
+          },
+          {
+            id: 8,
+            icon: "control",
+            label: "Group Projects",
           },
         ],
       },
     ],
+  },
+  {
+    id: 2,
+    icon: "control",
+    label: "Email",
+  },
+  {
+    id: 3,
+    icon: "control",
+    label: "Calendar",
+  },
+  {
+    id: 9,
+    icon: "control",
+    label: "Shopping List",
+  },
+  {
+    id: 16,
+    icon: "control",
+    label: "Ideas",
+  },
+  {
+    id: 10,
+    icon: "folder-close",
+    isExpanded: true,
+    label: "Class Notes",
+    childNodes: [
+      {
+        id: 11,
+        icon: "control",
+        label: "Cloud Computing",
+      },
+      {
+        id: 12,
+        icon: "control",
+        label: "Advanced Topics",
+      },
+      {
+        id: 13,
+        icon: "control",
+        label: "Information Visualisation",
+      },
+      {
+        id: 14,
+        icon: "control",
+        label: "NGUI",
+      },
+    ],
+  },
+  {
+    id: 15,
+    icon: "control",
+    label: "Papers",
   },
 ];
