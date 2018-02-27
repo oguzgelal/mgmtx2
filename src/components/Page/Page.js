@@ -40,9 +40,9 @@ const Page = props => {
             { 'mx-page--contents-center': props.center }
           )}
         >
-          <Scroller class={cx({ 'mx-page--center': props.center })}>
+          <div class={cx({ 'mx-page--center': props.center })}>
             {props.contents}
-          </Scroller>
+          </div>
         </div>
       }
 

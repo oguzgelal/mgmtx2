@@ -1,4 +1,4 @@
-@import "~@blueprintjs/core/lib/scss/variables";
+@import "../../variables";
 
 .mx-tree {
 
@@ -12,6 +12,7 @@
   }
   &--label-node {
     margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: -15px;
   }
   &--label-node > .pt-tree-node-content {

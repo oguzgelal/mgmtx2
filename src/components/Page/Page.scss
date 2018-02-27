@@ -1,4 +1,4 @@
-@import "~@blueprintjs/core/lib/scss/variables";
+@import "../../variables";
 
 $sidebar-width: 270px;
 $sidebar-bg-light: rgba(255,255,255,0.7);
@@ -8,7 +8,6 @@ $sidebar-bg-dark: $pt-dark-code-background-color;
   display: flex;
   position: relative;
   min-width: 100vw;
-  overflow: hidden !important;
 
   height: calc(100vh - #{$pt-navbar-height});
   &--no-navbar { height: 100vh !important; }
@@ -27,6 +26,7 @@ $sidebar-bg-dark: $pt-dark-code-background-color;
     width: $sidebar-width;
     background-color: $sidebar-bg-light;
     border-right: 1px solid rgba(0,0,0,.05);
+    overflow: hidden !important;
 
     .pt-dark & {
       background-color: $sidebar-bg-dark;
@@ -36,6 +36,8 @@ $sidebar-bg-dark: $pt-dark-code-background-color;
 
   &--contents {
     flex-grow: 1;
+    overflow: scroll !important;
+
     &-center {
       justify-content: center;
       align-items: center;

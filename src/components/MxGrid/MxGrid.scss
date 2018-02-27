@@ -1,0 +1,13 @@
+@import "../../variables";
+
+.mx-grid {
+  padding: $page-padding;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &-item {
+    flex-shrink: 0;
+  }
+}
