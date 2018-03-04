@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Page from '../components/Page/Page'
+import Page from '../../components/Page/Page'
 
-class Constants extends React.Component {
+class Triggers extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -20,7 +20,7 @@ class Constants extends React.Component {
   }
 }
 
-Constants.propTypes = {
+Triggers.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Constants);
+)(Triggers);

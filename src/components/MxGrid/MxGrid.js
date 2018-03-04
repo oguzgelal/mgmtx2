@@ -12,14 +12,14 @@ class MxGrids extends React.Component {
   }
 
   render() {
-
     const items = [];
+    const width = `${Math.floor(100 / this.props.columns - 1)}%`;
     this.props.contents.map((item, i) => {
       items.push(
         <div
           key={`item-${i}`}
           className="mx-grid-item"
-          style={{ width: `${Math.floor(100 / this.props.columns - 1)}%` }}>
+          style={{ width }}>
           {item}
         </div>
       )
@@ -28,6 +28,7 @@ class MxGrids extends React.Component {
     return (
       <div className="mx-grid">
         {items}
+        <div className="mx-grid-item" style={{ width, visibility: 'hidden' }} />
       </div>
     );
   }

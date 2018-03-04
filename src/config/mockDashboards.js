@@ -1,4 +1,8 @@
 import { Button, Tooltip } from '@blueprintjs/core'
+import {
+  TERM_DASHBOARD,
+  TERM_DASHBOARDS,
+} from '../config/terminology'
 
 export default [
   {
@@ -6,9 +10,9 @@ export default [
     isExpanded: true,
     hasCaret: false,
     className: "mx-tree--label-node",
-    label: "Dashboards",
+    label: TERM_DASHBOARDS,
     secondaryLabel: (
-      <Tooltip content="New Dashboard">
+      <Tooltip content={`New ${TERM_DASHBOARD}`}>
         <Button className="pt-minimal" icon="plus" />
       </Tooltip>
     ),

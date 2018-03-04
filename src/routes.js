@@ -4,16 +4,16 @@ import { connect } from 'dva';
 import { bindActionCreators } from 'redux';
 
 // Views
-import Actions from './routes/Actions';
-import Collections from './routes/Collections';
-import Constants from './routes/Constants';
-import Dashboards from './routes/Dashboards';
-import Endpoints from './routes/Endpoints';
-import Entities from './routes/Entities';
-import Landing from './routes/Landing';
-import Triggers from './routes/Triggers';
-import Variables from './routes/Variables';
-import Workflows from './routes/Workflows';
+import Actions from './routes/Actions/Actions';
+import Collections from './routes/Collections/Collections';
+import Constants from './routes/Constants/Constants';
+import Dashboards from './routes/Dashboards/Dashboards';
+import Endpoints from './routes/Endpoints/Endpoints';
+import Entities from './routes/Entities/Entities';
+import Landing from './routes/Landing/Landing';
+import Triggers from './routes/Triggers/Triggers';
+import Variables from './routes/Variables/Variables';
+import Workflows from './routes/Workflows/Workflows';
 
 // Components
 import PrivateRoute from './components/Routes/PrivateRoute/PrivateRoute';

@@ -5,9 +5,9 @@ import { bindActionCreators } from 'redux';
 
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core'
 
-import Page from '../components/Page/Page'
-import MxTree from '../components/MxTree/MxTree'
-import mockDashboards from '../config/mockDashboards'
+import Page from '../../components/Page/Page'
+import MxTree from '../../components/MxTree/MxTree'
+import mockDashboards from '../../config/mockDashboards'
 
 
 class Dashboards extends React.Component {

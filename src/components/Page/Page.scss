@@ -1,7 +1,7 @@
 @import "../../variables";
 
 $sidebar-width: 270px;
-$sidebar-bg-light: rgba(255,255,255,0.7);
+$sidebar-bg-light: white;
 $sidebar-bg-dark: $pt-dark-code-background-color;
 
 .mx-page {
@@ -16,6 +16,7 @@ $sidebar-bg-dark: $pt-dark-code-background-color;
   .pt-dark & { background-color: $pt-dark-app-background-color; }
 
   &--center {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,12 +26,12 @@ $sidebar-bg-dark: $pt-dark-code-background-color;
     flex-shrink: 0;
     width: $sidebar-width;
     background-color: $sidebar-bg-light;
-    border-right: 1px solid rgba(0,0,0,.05);
     overflow: hidden !important;
+    box-shadow: $pt-elevation-shadow-0;
 
     .pt-dark & {
       background-color: $sidebar-bg-dark;
-      border: none;
+      box-shadow: $pt-dark-elevation-shadow-0;
     }
   }
 

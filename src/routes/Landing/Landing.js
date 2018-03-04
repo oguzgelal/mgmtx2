@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import history from '../config/history'
-import { DEFAULT_ROUTE } from '../config/routes'
+import history from '../../config/history'
+import { DEFAULT_ROUTE } from '../../config/routes'
 
-import Page from '../components/Page/Page'
-import LoginForm from '../components/LoginForm/LoginForm'
+import Page from '../../components/Page/Page'
+import LoginForm from '../../components/LoginForm/LoginForm'
 
 class Landing extends React.Component {
   constructor(props, context) {

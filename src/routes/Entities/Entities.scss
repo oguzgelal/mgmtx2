@@ -1,0 +1,18 @@
+@import "../../variables";
+
+.entities-page {
+  &--search {
+    display: flex;
+    padding: $page-padding;
+    padding-bottom: 0;
+
+    &-bar {
+      flex-grow: 1;
+    }
+
+    &-buttons {
+      flex-shrink: 0;
+      margin-left: $page-gap;
+    }
+  }
+}

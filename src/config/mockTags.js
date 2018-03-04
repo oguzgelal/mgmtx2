@@ -1,4 +1,5 @@
 import { Tooltip, Icon } from '@blueprintjs/core'
+import { TERM_APPS } from '../config/terminology'
 
 export default [
   {
@@ -30,7 +31,7 @@ export default [
     isExpanded: true,
     hasCaret: false,
     className: "mx-tree--label-node",
-    label: "Apps",
+    label: TERM_APPS,
     childNodes: [
       {
         id: 5,

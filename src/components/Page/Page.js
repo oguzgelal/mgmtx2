@@ -40,7 +40,7 @@ const Page = props => {
             { 'mx-page--contents-center': props.center }
           )}
         >
-          <div class={cx({ 'mx-page--center': props.center })}>
+          <div className={cx({ 'mx-page--center': props.center })}>
             {props.contents}
           </div>
         </div>

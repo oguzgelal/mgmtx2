@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Page from '../components/Page/Page'
+import Page from '../../components/Page/Page'
 
-class Workflows extends React.Component {
+class Constants extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -20,7 +20,7 @@ class Workflows extends React.Component {
   }
 }
 
-Workflows.propTypes = {
+Constants.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Workflows);
+)(Constants);

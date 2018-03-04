@@ -10,6 +10,7 @@
     "@blueprintjs/core": "^2.0.0-rc.2",
     "classnames": "^2.2.5",
     "dva": "^2.1.0",
+    "faker": "^4.1.0",
     "localforage": "^1.5.7",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
