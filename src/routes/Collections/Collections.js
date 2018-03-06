@@ -61,7 +61,7 @@ class Collections extends React.Component {
               <MenuDivider title={TERM_COLLECTION_ITEMS} />
               <MenuItem icon="search" text={`View ${TERM_COLLECTION_ITEMS.toLocaleLowerCase()}`} />
               <MenuItem icon="new-object" text={`New inclusion ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
-              <MenuItem icon="graph-remove" text={`New exclude ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
+              <MenuItem icon="graph-remove" text={`New exclusion ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
             </Menu>
           }
         />
