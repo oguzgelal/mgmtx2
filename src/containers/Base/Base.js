@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import { isLoggedIn } from '../../utils/mics';
 import MxNavbar from '../../containers/MxNavbar/MxNavbar';
+import MxOverlay from '../../containers/MxOverlay/MxOverlay';
 
 class Base extends React.Component {
   constructor(props, context) {
@@ -33,6 +34,7 @@ class Base extends React.Component {
       <div>
         {navbar}
         {this.props.children}
+        <MxOverlay />
       </div>
     );
   }

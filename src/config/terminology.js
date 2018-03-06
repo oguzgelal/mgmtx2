@@ -1,3 +1,5 @@
+import MxTextIcon from '../components/MxTextIcon/MxTextIcon'
+
 export const TERM_DASHBOARD = 'Dashboard'
 export const TERM_DASHBOARDS = 'Dashboards'
 export const ROUTE_DASHBOARDS = 'dashboards'
@@ -23,17 +25,17 @@ export const TERM_COLLECTION_ITEMS = 'Subsets'
 export const TERM_VALUE = 'Value'
 export const TERM_VALUES = 'Values'
 export const ROUTE_VALUES = 'values'
-export const ICON_VALUES = 'variable'
+export const ICON_VALUES = 'property'
 
 export const TERM_VARIABLE = 'Variable'
 export const TERM_VARIABLES = 'Variables'
 export const ROUTE_VARIABLES = `${ROUTE_VALUES}/variables`
-export const ICON_VARIABLES = <div>x</div>
+export const ICON_VARIABLES = <MxTextIcon text="x" />
 
 export const TERM_CONSTANT = 'Constants'
 export const TERM_CONSTANTS = 'Constants'
 export const ROUTE_CONSTANTS = `${ROUTE_VALUES}/constants`
-export const ICON_CONSTANTS = <div>π</div>
+export const ICON_CONSTANTS = <MxTextIcon text="π" />
 
 export const TERM_AUTOMATE = 'Automate'
 export const ICON_AUTOMATE = 'cog'

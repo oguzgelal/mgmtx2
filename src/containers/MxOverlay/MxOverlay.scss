@@ -1,0 +1,27 @@
+@import "../../variables";
+
+$mx-overlay--height: 80vh;
+$mx-overlay--width: 50vw;
+$mx-overlay--width-large: 80vw;
+$mx-overlay--width-small: 30vw;
+$mx-overlay--transition: all 0.3s ease;
+
+.mx-overlay {
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &--container {
+    position: relative;
+    width: $mx-overlay--width;
+    height: $mx-overlay--height;
+    &-large { width: $mx-overlay--width-large; }
+    &-small { width: $mx-overlay--width-small; }
+    transition: $mx-overlay--transition;
+  }
+}

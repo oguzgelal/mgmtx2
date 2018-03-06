@@ -60,8 +60,8 @@ class Collections extends React.Component {
               <MenuItem icon="send-to" text={`Insert ${TERM_COLLECTION.toLocaleLowerCase()} into...`} />
               <MenuDivider title={TERM_COLLECTION_ITEMS} />
               <MenuItem icon="search" text={`View ${TERM_COLLECTION_ITEMS.toLocaleLowerCase()}`} />
-              <MenuItem icon="new-object" text={`Include ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
-              <MenuItem icon="graph-remove" text={`Exclude ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
+              <MenuItem icon="new-object" text={`New inclusion ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
+              <MenuItem icon="graph-remove" text={`New exclude ${TERM_COLLECTION_ITEM.toLocaleLowerCase()}`} />
             </Menu>
           }
         />

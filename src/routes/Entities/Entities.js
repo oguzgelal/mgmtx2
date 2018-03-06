@@ -28,6 +28,7 @@ import {
   TERM_ENTITY_ITEMS
 } from '../../config/terminology'
 
+import overlayModel from '../../models/overlay';
 import { getEntityCards } from '../../utils/mock';
 
 import './Entities.scss';
@@ -41,11 +42,16 @@ class Entities extends React.Component {
     };
 
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.handleNewEntity = this.handleNewEntity.bind(this);
   }
 
   handleFilterChange() {
     this.setState({ filtering: true })
     setTimeout(() => { this.setState({ filtering: false }) }, 1000)
+  }
+
+  handleNewEntity() {
+    this.props.overlayActions[overlayModel._showOverlay]()
   }
 
   render() {
@@ -95,6 +101,7 @@ class Entities extends React.Component {
               text={`New ${TERM_ENTITY}`}
               icon="small-plus"
               intent={Intent.PRIMARY}
+              onClick={this.handleNewEntity}
             />
           </div>
         </div>
@@ -117,6 +124,7 @@ class Entities extends React.Component {
 }
 
 Entities.propTypes = {
+  overlayActions: PropTypes.object,
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -124,7 +132,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  //actions: bindActionCreators(..., dispatch)
+  overlayActions: bindActionCreators(overlayModel._actions, dispatch)
 });
 
 export default connect(

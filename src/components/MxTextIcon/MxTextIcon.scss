@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.mx-text-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 11pt;
+  font-weight: bolder;
+  color: $pt-code-text-color;
+
+  .pt-dark & {
+    color: $pt-dark-code-text-color;
+  }
+}

@@ -12,6 +12,7 @@ import history from './config/history';
 
 // models
 import theme from './models/theme'
+import overlay from './models/overlay'
 
 // styles
 import 'normalize.css/normalize.css';
@@ -26,6 +27,7 @@ const app = dva({
 
 // Models
 app.model(theme);
+app.model(overlay);
 
 // Router
 app.router(() => {
