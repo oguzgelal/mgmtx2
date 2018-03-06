@@ -14,13 +14,6 @@ import {
   MenuDivider,
 } from '@blueprintjs/core';
 
-import Page from '../../components/Page/Page'
-import MxTree from '../../components/MxTree/MxTree'
-import mockTags from '../../config/mockTags'
-
-import MxCardItem from '../../components/MxCardItem/MxCardItem'
-import MxGrid from '../../components/MxGrid/MxGrid'
-
 import {
   TERM_ENTITY,
   TERM_ENTITIES,
@@ -28,8 +21,15 @@ import {
   TERM_ENTITY_ITEMS
 } from '../../config/terminology'
 
-import overlayModel from '../../models/overlay';
+import mockTags from '../../config/mockTags'
 import { getEntityCards } from '../../utils/mock';
+
+import overlayModel from '../../models/overlay';
+
+import Page from '../../components/Page/Page'
+import MxTree from '../../components/MxTree/MxTree'
+import MxCardItem from '../../components/MxCardItem/MxCardItem'
+import MxGrid from '../../components/MxGrid/MxGrid'
 
 import './Entities.scss';
 
@@ -84,7 +84,10 @@ class Entities extends React.Component {
       <Spinner className={Classes.SMALL} />
     );
 
-    const sidebar = <MxTree multiSelect nodes={mockTags} />;
+    const sidebar = (
+      <MxTree multiSelect nodes={mockTags} />
+    );
+
     const contents = (
       <div className="entities-page">
         <div className="entities-page--search">
@@ -109,7 +112,6 @@ class Entities extends React.Component {
           <MxGrid contents={entities} columns={3} />
         </div>
       </div>
-
     );
 
     return (

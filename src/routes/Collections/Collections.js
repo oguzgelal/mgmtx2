@@ -14,14 +14,19 @@ import {
   MenuDivider,
 } from '@blueprintjs/core';
 
+import {
+  TERM_COLLECTION,
+  TERM_COLLECTIONS,
+  TERM_COLLECTION_ITEMS,
+  TERM_COLLECTION_ITEM
+} from '../../config/terminology'
+
 import Page from '../../components/Page/Page'
 import MxTree from '../../components/MxTree/MxTree'
-import mockTags from '../../config/mockTags'
-
 import MxCardItem from '../../components/MxCardItem/MxCardItem'
 import MxGrid from '../../components/MxGrid/MxGrid'
 
-import { TERM_COLLECTION, TERM_COLLECTIONS, TERM_COLLECTION_ITEMS, TERM_COLLECTION_ITEM } from '../../config/terminology'
+import mockTags from '../../config/mockTags'
 import { getEntityCards } from '../../utils/mock';
 
 import './Collections.scss';
@@ -73,7 +78,10 @@ class Collections extends React.Component {
       <Spinner className={Classes.SMALL} />
     );
 
-    const sidebar = <MxTree multiSelect nodes={mockTags} />;
+    const sidebar = (
+      <MxTree multiSelect nodes={mockTags} />
+    );
+
     const contents = (
       <div className="collections-page">
         <div className="collections-page--search">
@@ -97,7 +105,6 @@ class Collections extends React.Component {
           <MxGrid contents={entities} columns={3} />
         </div>
       </div>
-
     );
 
     return (
