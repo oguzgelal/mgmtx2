@@ -13,9 +13,16 @@ class Base extends React.Component {
 
     this.state = {
     };
+
+    this.isDark = this.isDark.bind(this);
+  }
+
+  isDark() {
+    return this.props.theme.active.id === 'dark';
   }
 
   render() {
+    document.body.classList.toggle('pt-dark', this.isDark())
     const data = this.props.data || {};
     const navbar = ((data.showNavbar && isLoggedIn(this.props.user)) ?
       <MxNavbar {...this.props} /> :
@@ -23,11 +30,7 @@ class Base extends React.Component {
     );
 
     return (
-      <div
-        className={cx({
-          'pt-dark': this.props.theme.active.id === 'dark'
-        })}
-      >
+      <div>
         {navbar}
         {this.props.children}
       </div>

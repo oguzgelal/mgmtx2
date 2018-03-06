@@ -21,21 +21,6 @@ import {
 } from '@blueprintjs/core';
 
 import {
-  ROUTE_ACTIONS,
-  ROUTE_DASHBOARDS,
-  ROUTE_COLLECTIONS,
-  ROUTE_CONSTANTS,
-  ROUTE_ENDPOINTS,
-  ROUTE_ENTITIES,
-  ROUTE_TRIGGERS,
-  ROUTE_VARIABLES,
-  ROUTE_WORKFLOWS,
-  ROUTE_DATA,
-  ROUTE_VALUES,
-  ROUTE_AUTOMATE,
-} from '../../config/routes'
-
-import {
   TERM_ENTITIES,
   TERM_COLLECTIONS,
   TERM_VARIABLES,
@@ -48,6 +33,29 @@ import {
   TERM_DATA,
   TERM_VALUES,
   TERM_AUTOMATE,
+  ICON_ENTITIES,
+  ICON_COLLECTIONS,
+  ICON_VARIABLES,
+  ICON_CONSTANTS,
+  ICON_ACTIONS,
+  ICON_WORKFLOWS,
+  ICON_TRIGGERS,
+  ICON_ENDPOINTS,
+  ICON_DATA,
+  ICON_VALUES,
+  ICON_AUTOMATE,
+  ROUTE_ACTIONS,
+  ROUTE_DASHBOARDS,
+  ROUTE_COLLECTIONS,
+  ROUTE_CONSTANTS,
+  ROUTE_ENDPOINTS,
+  ROUTE_ENTITIES,
+  ROUTE_TRIGGERS,
+  ROUTE_VARIABLES,
+  ROUTE_WORKFLOWS,
+  ROUTE_DATA,
+  ROUTE_VALUES,
+  ROUTE_AUTOMATE,
 } from '../../config/terminology'
 
 class MxNavbar extends React.Component {
@@ -69,13 +77,13 @@ class MxNavbar extends React.Component {
       <Menu>
         <MenuItem
           text={TERM_ENTITIES}
-          icon="application"
+          icon={ICON_ENTITIES}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_ENTITIES) })}
           onClick={() => { history.push(`/${ROUTE_ENTITIES}`) }}
         />
         <MenuItem
           text={TERM_COLLECTIONS}
-          icon="applications"
+          icon={ICON_COLLECTIONS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_COLLECTIONS) })}
           onClick={() => { history.push(`/${ROUTE_COLLECTIONS}`) }}
         />
@@ -86,13 +94,13 @@ class MxNavbar extends React.Component {
       <Menu>
         <MenuItem
           text={TERM_VARIABLES}
-          icon={<div>x</div>}
+          icon={ICON_VARIABLES}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_VARIABLES) })}
           onClick={() => { history.push(`/${ROUTE_VARIABLES}`) }}
         />
         <MenuItem
           text={TERM_CONSTANTS}
-          icon={<div>π</div>}
+          icon={ICON_CONSTANTS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_CONSTANTS) })}
           onClick={() => { history.push(`/${ROUTE_CONSTANTS}`) }}
         />
@@ -103,25 +111,25 @@ class MxNavbar extends React.Component {
       <Menu>
         <MenuItem
           text={TERM_ACTIONS}
-          icon="dot"
+          icon={ICON_ACTIONS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_ACTIONS) })}
           onClick={() => { history.push(`/${ROUTE_ACTIONS}`) }}
         />
         <MenuItem
           text={TERM_WORKFLOWS}
-          icon="flows"
+          icon={ICON_WORKFLOWS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_WORKFLOWS) })}
           onClick={() => { history.push(`/${ROUTE_WORKFLOWS}`) }}
         />
         <MenuItem
           text={TERM_TRIGGERS}
-          icon="social-media"
+          icon={ICON_TRIGGERS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_TRIGGERS) })}
           onClick={() => { history.push(`/${ROUTE_TRIGGERS}`) }}
         />
         <MenuItem
           text={TERM_ENDPOINTS}
-          icon="globe"
+          icon={ICON_ENDPOINTS}
           className={cx({ 'pt-intent-primary': this.isActive(ROUTE_ENDPOINTS) })}
           onClick={() => { history.push(`/${ROUTE_ENDPOINTS}`) }}
         />
@@ -172,7 +180,7 @@ class MxNavbar extends React.Component {
           <Popover content={DataMenu}>
             <Button
               text={TERM_DATA}
-              icon="database"
+              icon={ICON_DATA}
               className={cx(
                 'pt-minimal',
                 { 'pt-intent-primary': this.isActive(ROUTE_DATA) }
@@ -183,7 +191,7 @@ class MxNavbar extends React.Component {
           <Popover content={ValuesMenu}>
             <Button
               text={TERM_VALUES}
-              icon="variable"
+              icon={ICON_VALUES}
               className={cx(
                 'pt-minimal',
                 { 'pt-intent-primary': this.isActive(ROUTE_VALUES) }
@@ -193,8 +201,8 @@ class MxNavbar extends React.Component {
 
           <Popover content={AutomateMenu}>
             <Button
-              icon="cog"
               text={TERM_AUTOMATE}
+              icon={ICON_AUTOMATE}
               className={cx(
                 'pt-minimal',
                 { 'pt-intent-primary': this.isActive(ROUTE_AUTOMATE) }

@@ -2,16 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { InputGroup, Spinner, Classes, Intent, Button } from '@blueprintjs/core';
+
+import {
+  InputGroup,
+  Spinner,
+  Classes,
+  Intent,
+  Button,
+  Menu,
+  MenuItem,
+  MenuDivider,
+} from '@blueprintjs/core';
 
 import Page from '../../components/Page/Page'
 import MxTree from '../../components/MxTree/MxTree'
 import mockTags from '../../config/mockTags'
 
-import EntityCard from '../../components/EntityCard/EntityCard'
+import MxCardItem from '../../components/MxCardItem/MxCardItem'
 import MxGrid from '../../components/MxGrid/MxGrid'
 
-import { TERM_ENTITY, TERM_ENTITIES } from '../../config/terminology'
+import {
+  TERM_ENTITY,
+  TERM_ENTITIES,
+  TERM_ENTITY_ITEM,
+  TERM_ENTITY_ITEMS
+} from '../../config/terminology'
+
 import { getEntityCards } from '../../utils/mock';
 
 import './Entities.scss';
@@ -37,10 +53,22 @@ class Entities extends React.Component {
     const entityData = getEntityCards(30);
     entityData.map(entity => {
       entities.push(
-        <EntityCard
+        <MxCardItem
           id={entity.id}
           title={entity.title}
           tags={entity.tags}
+          contextMenu={
+            <Menu>
+              <MenuDivider title={TERM_ENTITY} />
+              <MenuItem icon="edit" text={`Edit ${TERM_ENTITY.toLocaleLowerCase()}`} />
+              <MenuItem icon="trash" text={`Delete ${TERM_ENTITY.toLocaleLowerCase()}`} />
+              <MenuItem icon="duplicate" text={`Duplicate ${TERM_ENTITY.toLocaleLowerCase()}`} />
+              <MenuItem icon="send-to" text={`Insert ${TERM_ENTITY.toLocaleLowerCase()} into...`} />
+              <MenuDivider title={TERM_ENTITY_ITEMS} />
+              <MenuItem icon="search-template" text={`View ${TERM_ENTITY_ITEMS.toLocaleLowerCase()}`} />
+              <MenuItem icon="add-to-artifact" text={`New ${TERM_ENTITY_ITEM.toLocaleLowerCase()}`} />
+            </Menu>
+          }
         />
       )
     })
@@ -49,6 +77,7 @@ class Entities extends React.Component {
       this.state.filtering &&
       <Spinner className={Classes.SMALL} />
     );
+
     const sidebar = <MxTree multiSelect nodes={mockTags} />;
     const contents = (
       <div className="entities-page">

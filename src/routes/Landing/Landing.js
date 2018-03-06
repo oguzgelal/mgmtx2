@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import history from '../../config/history'
-import { DEFAULT_ROUTE } from '../../config/routes'
+import { DEFAULT_ROUTE } from '../../config/terminology'
 
 import Page from '../../components/Page/Page'
 import LoginForm from '../../components/LoginForm/LoginForm'
