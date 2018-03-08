@@ -8,15 +8,15 @@ export const TERM_DATA = 'Data'
 export const ICON_DATA = 'database'
 export const ROUTE_DATA = 'data'
 
-export const TERM_ENTITY = 'Class'
-export const TERM_ENTITIES = 'Classes'
+export const TERM_ENTITY = 'Entity'
+export const TERM_ENTITIES = 'Entities'
 export const ROUTE_ENTITIES = `${ROUTE_DATA}/classes`
 export const ICON_ENTITIES = 'application'
 export const TERM_ENTITY_ITEM = 'Member'
 export const TERM_ENTITY_ITEMS = 'Members'
 
-export const TERM_COLLECTION = 'Set'
-export const TERM_COLLECTIONS = 'Sets'
+export const TERM_COLLECTION = 'Collection'
+export const TERM_COLLECTIONS = 'Collections'
 export const ROUTE_COLLECTIONS = `${ROUTE_DATA}/sets`
 export const ICON_COLLECTIONS = 'intersection'
 export const TERM_COLLECTION_ITEM = 'Subset'
