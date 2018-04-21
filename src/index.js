@@ -11,8 +11,7 @@ import Routes from './routes';
 import history from './config/history';
 
 // models
-import theme from './models/theme'
-import overlay from './models/overlay'
+import models from './models'
 
 // styles
 import 'normalize.css/normalize.css';
@@ -25,9 +24,10 @@ const app = dva({
   extraEnhancers: [autoRehydrate()],
 });
 
-// Models
-app.model(theme);
-app.model(overlay);
+// Register models
+Object.keys(models).map(model =>
+  app.model(models[model])
+)
 
 // Router
 app.router(() => {

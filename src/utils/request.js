@@ -1,30 +1,13 @@
-import fetch from 'dva/fetch';
+import { request } from 'graphql-request'
 
-function parseJSON(response) {
-  return response.json();
+const getBase = () => {
+  return 'http://localhost:4000'
 }
 
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
-  }
+export default ({ base, query, variables }) => {
+  const uriBase = base || getBase();
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
-}
-
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
+  return request(uriBase, query, variables)
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }

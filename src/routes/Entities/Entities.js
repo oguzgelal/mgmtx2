@@ -134,7 +134,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  overlayActions: bindActionCreators(overlayModel._actions, dispatch)
+  overlayActions: bindActionCreators(overlayModel.actions, dispatch)
 });
 
 export default connect(

@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import history from '../../config/history'
 import { DEFAULT_ROUTE } from '../../config/terminology'
 
+import auth from '../../models/auth';
 import Page from '../../components/Page/Page'
 import LoginForm from '../../components/LoginForm/LoginForm'
 
@@ -14,28 +15,37 @@ class Landing extends React.Component {
     super(props, context);
 
     this.state = {};
+
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-    console.log(e);
-    e.preventDefault();
-    history.push(`/${DEFAULT_ROUTE}`)
+  onSubmit({ email, password }) {
+    this.props.authActions.signin({ email, password })
+    // history.push(`/${DEFAULT_ROUTE}`)
   }
 
   render() {
-    const contents = <LoginForm onSubmit={this.onSubmit} />;
+    const contents = (
+      <LoginForm
+        request={this.props.request}
+        onSubmit={this.onSubmit}
+      />
+    );
     return <Page {...this.props} center contents={contents} />;
   }
 }
 
 Landing.propTypes = {
+  authActions: PropTypes.object,
+  request: PropTypes.object,
 };
 
 const mapStateToProps = (state, ownProps) => ({
+  request: state.request
 });
 
 const mapDispatchToProps = dispatch => ({
-  //actions: bindActionCreators(..., dispatch)
+  authActions: bindActionCreators(auth.actions, dispatch)
 });
 
 export default connect(

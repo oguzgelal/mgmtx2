@@ -1,7 +1,10 @@
-const model = {};
 
-// namespace
-model.namespace = 'overlay';
+const model = {
+  namespace: 'overlay',
+  actions: {},
+  effects: {},
+  reducers: {},
+};
 
 // method names
 model._showOverlay = 'showOverlay';
@@ -14,16 +17,14 @@ model.state = {
 }
 
 // actions
-model._actions = {}
-model._actions[model._showOverlay] = (payload) => ({
+model.actions[model._showOverlay] = (payload) => ({
   type: `${model.namespace}/${model._showOverlay}`
 })
-model._actions[model._hideOverlay] = (payload) => ({
+model.actions[model._hideOverlay] = (payload) => ({
   type: `${model.namespace}/${model._hideOverlay}`
 })
 
 // effects
-model.effects = {};
 model.effects[model._showOverlay] = function* ({ payload }, { put }) {
   yield put({ type: `${model._showOverlay}Reducer` });
 }
@@ -32,7 +33,6 @@ model.effects[model._hideOverlay] = function* ({ payload }, { put }) {
 }
 
 // reducers
-model.reducers = {};
 model.reducers[`${model._showOverlay}Reducer`] = (state, action) => {
   return Object.assign({}, state, { open: true });
 }

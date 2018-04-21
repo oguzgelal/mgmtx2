@@ -1,7 +1,10 @@
-const model = {};
 
-// namespace
-model.namespace = 'theme';
+const model = {
+  namespace: 'theme',
+  actions: {},
+  effects: {},
+  reducers: {},
+};
 
 // method names
 model._changeTheme = 'changeTheme';
@@ -28,19 +31,16 @@ model.state = {
 }
 
 // actions
-model._actions = {}
-model._actions[model._changeTheme] = (payload) => ({
+model.actions[model._changeTheme] = (payload) => ({
   type: `${model.namespace}/${model._changeTheme}`
 })
 
 // effects
-model.effects = {};
 model.effects[model._changeTheme] = function* ({ payload }, { put }) {
   yield put({ type: `${model._changeTheme}Reducer` });
 }
 
 // reducers
-model.reducers = {};
 model.reducers[`${model._changeTheme}Reducer`] = (state, action) => {
   let newTheme = model._data.themes.map(i => i.id).indexOf(state.active.id) + 1;
   if (newTheme >= model._data.themes.length) { newTheme = 0; }

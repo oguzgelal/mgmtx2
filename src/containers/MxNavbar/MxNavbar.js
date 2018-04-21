@@ -254,7 +254,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  themeActions: bindActionCreators(themeModel._actions, dispatch)
+  themeActions: bindActionCreators(themeModel.actions, dispatch)
 });
 
 export default connect(
