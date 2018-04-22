@@ -1,7 +1,15 @@
 import { request } from 'graphql-request'
 
 const getBase = () => {
-  return 'http://localhost:4000'
+
+  // prod environment
+  if (!window.location.href.match('localhost|127.0.0.1')) {
+    return 'https://mgmtx-server.now.sh/'
+  }
+
+  // local environment
+  return 'https://mgmtx-server.now.sh/'
+  //return 'http://localhost:4000'
 }
 
 export default ({ base, query, variables }) => {
