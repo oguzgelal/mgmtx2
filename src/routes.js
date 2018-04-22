@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch, withRouter, Redirect } from 'dva/router';
+import { Switch, withRouter } from 'dva/router';
 import { connect } from 'dva';
 import { bindActionCreators } from 'redux';
 
@@ -16,8 +16,8 @@ import Variables from './routes/Variables/Variables';
 import Workflows from './routes/Workflows/Workflows';
 
 // Components
-import PrivateRoute from './components/Routes/PrivateRoute/PrivateRoute';
-import PublicRoute from './components/Routes/PublicRoute/PublicRoute';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import PublicRoute from './components/Routes/PublicRoute';
 
 // Constants
 import {
@@ -30,6 +30,7 @@ import {
   ROUTE_TRIGGERS,
   ROUTE_VARIABLES,
   ROUTE_WORKFLOWS,
+  DEFAULT_ROUTE,
 } from './config/terminology'
 
 class Routes extends React.Component {
@@ -47,7 +48,8 @@ class Routes extends React.Component {
         <PublicRoute
           exact
           path="/"
-          userRedirectPath={`/${ROUTE_DASHBOARDS}`}
+          user={(this.props.auth || {}).user}
+          userRedirectPath={`/${DEFAULT_ROUTE}`}
           component={Landing}
           data={{
             showNavbar: false
@@ -57,7 +59,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_ACTIONS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Actions}
           data={{
             showNavbar: true
@@ -67,7 +69,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_COLLECTIONS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Collections}
           data={{
             showNavbar: true
@@ -77,7 +79,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_CONSTANTS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Constants}
           data={{
             showNavbar: true
@@ -87,7 +89,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_DASHBOARDS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Dashboards}
           data={{
             showNavbar: true
@@ -97,7 +99,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_ENDPOINTS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Endpoints}
           data={{
             showNavbar: true
@@ -107,7 +109,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_ENTITIES}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Entities}
           data={{
             showNavbar: true
@@ -117,7 +119,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_TRIGGERS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Triggers}
           data={{
             showNavbar: true
@@ -127,7 +129,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_VARIABLES}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Variables}
           data={{
             showNavbar: true
@@ -137,7 +139,7 @@ class Routes extends React.Component {
         <PrivateRoute
           exact
           path={`/${ROUTE_WORKFLOWS}`}
-          user={this.props.user}
+          user={(this.props.auth || {}).user}
           component={Workflows}
           data={{
             showNavbar: true
@@ -150,6 +152,7 @@ class Routes extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
+  auth: state.auth,
 });
 
 const mapDispatchToProps = dispatch => ({

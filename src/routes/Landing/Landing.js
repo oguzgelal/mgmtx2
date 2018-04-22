@@ -21,7 +21,6 @@ class Landing extends React.Component {
 
   onSubmit({ email, password }) {
     this.props.authActions.signin({ email, password })
-    // history.push(`/${DEFAULT_ROUTE}`)
   }
 
   render() {

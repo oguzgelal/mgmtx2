@@ -1,7 +1,10 @@
-import requestModel from './request';
-import * as authServices from '../services/auth';
 import { Intent } from '@blueprintjs/core';
+
+import requestModel from './request';
 import { Toast } from '../config/toast';
+import history from '../config/history';
+import { DEFAULT_ROUTE } from '../config/terminology';
+import * as authServices from '../services/auth';
 
 const model = {
   namespace: 'auth',
@@ -28,6 +31,10 @@ model.actions.signin = ({ email, password }) => ({
   keys: ['signin'],
 })
 
+model.actions.signout = () => ({
+  type: `${model.namespace}/signout`,
+})
+
 // effects
 
 model.effects.signin = function* (variables = {}, { put }) {
@@ -40,8 +47,18 @@ model.effects.signin = function* (variables = {}, { put }) {
 
 // reducers
 
-model.reducers.requestSuccess = (state, action = {}) => {
-  return state;
+model.reducers.signout = (state = {}, action = {}) => {
+  return { ...state, user: null };
+}
+
+model.reducers.requestSuccess = (state = {}, action = {}) => {
+  try {
+    const user = action.res.signin.data;
+    history.push(`/${DEFAULT_ROUTE}`);
+    return { ...state, user };
+  } catch (e) {
+    return state;
+  }
 }
 
 model.reducers.requestFail = (state, action = {}) => {

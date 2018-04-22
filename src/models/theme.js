@@ -6,11 +6,8 @@ const model = {
   reducers: {},
 };
 
-// method names
-model._changeTheme = 'changeTheme';
-
 // internal data
-model._data = {
+model.data = {
   themes: [
     {
       id: 'light',
@@ -27,25 +24,25 @@ model._data = {
 
 // default state
 model.state = {
-  active: model._data.themes[0]
+  active: model.data.themes[0]
 }
 
 // actions
-model.actions[model._changeTheme] = (payload) => ({
-  type: `${model.namespace}/${model._changeTheme}`
+model.actions.changeTheme = (payload) => ({
+  type: `${model.namespace}/changeTheme`
 })
 
 // effects
-model.effects[model._changeTheme] = function* ({ payload }, { put }) {
-  yield put({ type: `${model._changeTheme}Reducer` });
+model.effects.changeTheme = function* ({ payload }, { put }) {
+  yield put({ type: 'changeThemeReducer' });
 }
 
 // reducers
-model.reducers[`${model._changeTheme}Reducer`] = (state, action) => {
-  let newTheme = model._data.themes.map(i => i.id).indexOf(state.active.id) + 1;
-  if (newTheme >= model._data.themes.length) { newTheme = 0; }
+model.reducers.changeThemeReducer = (state, action) => {
+  let newTheme = model.data.themes.map(i => i.id).indexOf(state.active.id) + 1;
+  if (newTheme >= model.data.themes.length) { newTheme = 0; }
   return Object.assign({}, state, {
-    active: model._data.themes[newTheme]
+    active: model.data.themes[newTheme]
   });
 }
 

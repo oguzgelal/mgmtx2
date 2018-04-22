@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'dva/router';
 
 // Components
-import Base from '../../../containers/Base/Base';
-import { isLoggedIn } from '../../../utils/mics';
+import Base from '../../containers/Base/Base';
+import { isLoggedIn } from '../../utils/mics';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => (
   <Base {...rest} user={user}>

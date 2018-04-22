@@ -1,4 +1,4 @@
 
 export const isLoggedIn = user => {
-  return true;
+  return user && user.token && user.token !== '';
 };

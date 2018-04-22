@@ -21,17 +21,17 @@ model.state = {
 
 model.effects.request = function* ({ service, variables = {} }, { all, call, put }) {
 
+  // Init request for local reducer
   yield put({
     type: `requestReducer`,
     requestType: variables.type || 'default',
     keys: variables.keys || []
   })
 
-  const res = yield call(
-    service,
-    variables,
-  );
+  // Initiate the request
+  const res = yield call(service, variables);
 
+  // Response
   if (res.data) {
 
     // local success
@@ -42,7 +42,7 @@ model.effects.request = function* ({ service, variables = {} }, { all, call, put
       res: res.data
     })
 
-    // broadcast success
+    // dispatch success action for all registered models
     yield all(model.registered.map(ns =>
       put({
         type: `${ns}/requestSuccess`,
@@ -66,7 +66,7 @@ model.effects.request = function* ({ service, variables = {} }, { all, call, put
       message: message || 'Unknown error'
     })
 
-    // broadcast fail
+    // dispatch fail action for all registered models
     yield all(model.registered.map(ns =>
       put({
         type: `${ns}/requestFail`,

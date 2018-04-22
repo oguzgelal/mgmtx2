@@ -6,6 +6,7 @@ import cx from 'classnames';
 
 import history from '../../config/history'
 import themeModel from '../../models/theme'
+import authModel from '../../models/auth'
 import './MxNavbar.scss';
 
 import {
@@ -18,6 +19,7 @@ import {
   Popover,
   Position,
   Classes,
+  Tooltip,
 } from '@blueprintjs/core';
 
 import {
@@ -223,16 +225,21 @@ class MxNavbar extends React.Component {
 
           <Navbar.Divider />
 
-          <Button
-            className="pt-minimal"
-            icon={this.props.theme.active.icon}
-            onClick={this.props.themeActions[themeModel._changeTheme]}
-          />
+          <Tooltip content="Switch Theme">
+            <Button
+              className="pt-minimal"
+              icon={this.props.theme.active.icon}
+              onClick={this.props.themeActions.changeTheme}
+            />
+          </Tooltip>
 
-          <Button
-            className="pt-minimal"
-            icon="user"
-          />
+          <Tooltip content="Sign out">
+            <Button
+              onClick={this.props.authActions.signout}
+              className="pt-minimal"
+              icon="user"
+            />
+          </Tooltip>
 
           <Button
             className="pt-minimal"
@@ -247,6 +254,7 @@ class MxNavbar extends React.Component {
 
 MxNavbar.propTypes = {
   themeActions: PropTypes.object,
+  authActions: PropTypes.object,
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -254,7 +262,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  themeActions: bindActionCreators(themeModel.actions, dispatch)
+  themeActions: bindActionCreators(themeModel.actions, dispatch),
+  authActions: bindActionCreators(authModel.actions, dispatch),
 });
 
 export default connect(

@@ -48,11 +48,13 @@ app.start('#root');
 
 // Persist redux store
 let themeFilter = createFilter('theme', ['active']);
+let userFilter = createFilter('auth', ['user']);
 
 persistStore(app._store, {
   storage: localForage,
-  whitelist: ['theme'],
+  whitelist: ['theme', 'auth'],
   transforms: [
-    themeFilter
+    themeFilter,
+    userFilter
   ]
 });

@@ -25,7 +25,7 @@ class Base extends React.Component {
   render() {
     document.body.classList.toggle('pt-dark', this.isDark())
     const data = this.props.data || {};
-    const navbar = ((data.showNavbar && isLoggedIn(this.props.user)) ?
+    const navbar = ((data.showNavbar && isLoggedIn((this.props.auth || {}).user)) ?
       <MxNavbar {...this.props} /> :
       ''
     );
@@ -48,7 +48,7 @@ Base.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.user,
+  auth: state.auth,
   theme: state.theme
 });
 

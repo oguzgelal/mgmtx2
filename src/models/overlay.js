@@ -6,10 +6,6 @@ const model = {
   reducers: {},
 };
 
-// method names
-model._showOverlay = 'showOverlay';
-model._hideOverlay = 'hideOverlay';
-
 // default state
 model.state = {
   open: false,
@@ -17,26 +13,26 @@ model.state = {
 }
 
 // actions
-model.actions[model._showOverlay] = (payload) => ({
-  type: `${model.namespace}/${model._showOverlay}`
+model.actions.showOverlay = (payload) => ({
+  type: `${model.namespace}/showOverlay`
 })
-model.actions[model._hideOverlay] = (payload) => ({
-  type: `${model.namespace}/${model._hideOverlay}`
+model.actions.hideOverlay = (payload) => ({
+  type: `${model.namespace}/hideOverlay`
 })
 
 // effects
-model.effects[model._showOverlay] = function* ({ payload }, { put }) {
-  yield put({ type: `${model._showOverlay}Reducer` });
+model.effects.showOverlay = function* ({ payload }, { put }) {
+  yield put({ type: 'showOverlayReducer' });
 }
-model.effects[model._hideOverlay] = function* ({ payload }, { put }) {
-  yield put({ type: `${model._hideOverlay}Reducer` });
+model.effects.hideOverlay = function* ({ payload }, { put }) {
+  yield put({ type: 'hideOverlayReducer' });
 }
 
 // reducers
-model.reducers[`${model._showOverlay}Reducer`] = (state, action) => {
+model.reducers.showOverlayReducer = (state, action) => {
   return Object.assign({}, state, { open: true });
 }
-model.reducers[`${model._hideOverlay}Reducer`] = (state, action) => {
+model.reducers.hideOverlayReducer = (state, action) => {
   return Object.assign({}, state, { open: false });
 }
 

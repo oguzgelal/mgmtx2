@@ -51,7 +51,7 @@ class Entities extends React.Component {
   }
 
   handleNewEntity() {
-    this.props.overlayActions[overlayModel._showOverlay]()
+    this.props.overlayActions.showOverlay()
   }
 
   render() {
